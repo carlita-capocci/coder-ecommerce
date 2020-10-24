@@ -11,8 +11,9 @@ function App() {
   return (
     <div className="App">
       <NavBar> </NavBar>
-      <Home greeting="Welcome"> </Home>
-      <ItemListContainer title="A tu E-commerce"> </ItemListContainer>
+      <Home greeting="Bienvenido a tu sitio de compras"> </Home>
+      <ItemListContainer title="Arma tu pedido"> </ItemListContainer>
+      
       
       
     </div>

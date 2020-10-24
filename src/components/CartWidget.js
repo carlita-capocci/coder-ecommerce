@@ -1,8 +1,12 @@
 import React from 'react'
-import { Icon } from 'react-materialize';
+import { Divider, Icon } from 'react-materialize';
 
 function CartWidget(){
-    return <Icon> shopping_cart </Icon>
+    return <div style={{marginTop:'20px', display:'inline', marginRight:'10px'}}>
+        
+<Icon> shopping_cart </Icon>
+
+    </div> 
 };
 
 export default CartWidget
