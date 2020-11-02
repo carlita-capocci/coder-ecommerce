@@ -4,7 +4,7 @@ import React,{useState, useEffect} from 'react'
 const getItems= ()=>{
     return new Promise( (res,rej)=>{
         setTimeout( ()=> {
-            res(['Rascadores', 'Camas', 'Comederos' ])
+            res(['Rascadores', 'Camas', 'Comederos'])
         }, 2000)
     });
 }
