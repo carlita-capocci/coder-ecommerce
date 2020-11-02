@@ -14,8 +14,6 @@ function App() {
       <Home greeting="Bienvenido a tu sitio de compras"> </Home>
       <ItemListContainer title="Arma tu pedido"> </ItemListContainer>
       
-      
-      
     </div>
   );
 }
