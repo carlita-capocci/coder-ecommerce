@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import ItemList from "./ItemList";
+import libros from './Libros';
 
 const getItems = () => {
   return new Promise((res, rej) => {
     setTimeout(() => {
-      res([{title:"Rayuela", price:"$1500"}, {title:"El principito", price:"$1000"}]);
+      res(libros);
     }, 2000);
   });
 };

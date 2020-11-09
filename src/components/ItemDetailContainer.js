@@ -1,16 +1,19 @@
 import React,{useState, useEffect}  from 'react';
+import {useParams} from 'react-router-dom';
 import ItemDetail from './ItemDetail'
+import libros from "./Libros";
 
-const getItemDetail = () => {
+const getItemDetail = (id) => {
     return new Promise((res, rej) => {
       setTimeout(() => {
-        res({title:"Rayuela", price:"$1500"});
+        res(libros[id]);
       }, 2000);
     });
   };
 
-function ItemDetailContainer({id}){
-    const [item, setItems] = useState([]);
+function ItemDetailContainer(){
+    const [item, setItems] = useState({});
+    const {id}= useParams();
     useEffect(() => {
       let prom = getItemDetail(id);
       prom.then((resItems) => {
@@ -20,7 +23,7 @@ function ItemDetailContainer({id}){
 
     return (
         <div style={{ fontFamily: "arial", fontStyle: "italic", fontSize: "20px" }}>
-          <ItemDetail libro={item}/>
+          <ItemDetail item={item}/>
         </div>
       );
 
