@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
    
-function ItemCount({stock, initial, onAdd}){
+function ItemCount({stock, initial, onChange}){
     const [valor, setValor]= useState(0);
    
 return <div> 
@@ -8,6 +8,7 @@ return <div>
 <button onClick= {()=> {
     if(valor> 0 && valor<=stock){
     setValor( valor - 1)
+    onChange(valor - 1)
     }
 }} style= {{margin: "5px"}} > - </button> 
 
@@ -17,12 +18,13 @@ return <div>
     <button onClick= {()=> {
     if(valor<stock){
     setValor( valor + 1)
+    onChange(valor + 1)
     }
 }} style= {{margin: "5px"}}> + </button>
 
 
 
-<div> <button onClick={onAdd} style= {{width: "120px", height:"20px", margin: "5px" }}> Agregar </button> </div>
+<div> <button onClick={onChange} style= {{width: "120px", height:"50px", margin: "5px" }}> Agregar </button> </div>
 
 
 

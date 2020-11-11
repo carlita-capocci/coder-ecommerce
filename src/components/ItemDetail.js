@@ -1,4 +1,5 @@
 import React from 'react'
+import ItemCount from './ItemCount'
 
 function ItemDetail ( {item} ) {
 
@@ -7,6 +8,12 @@ function ItemDetail ( {item} ) {
         <p> {item.description} </p>
         <p> {item.price} </p>
         <img src={item.img}/>
+
+
+        <ItemCount stock={5} onChange={(valor) => {
+            console.log(`Comprar ${valor}`)
+        }
+    }/>
 
             </div>
 
