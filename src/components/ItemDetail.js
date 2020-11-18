@@ -1,7 +1,9 @@
 import React from 'react'
 import ItemCount from './ItemCount'
+import {useCartContext} from './CartContext'
 
 function ItemDetail ( {item} ) {
+    const {cart, add, remove}= useCartContext();
 
     return <div>
         <h4> {item.title} </h4>
@@ -14,7 +16,10 @@ function ItemDetail ( {item} ) {
             console.log(`Comprar ${valor}`)
         }
     }/>
-
+{cart.find(it=>it.id === item.id)
+? <button onClick= {()=>remove(item.id)}> Quitar </button>
+: <button onClick= {()=>add(item)}> Agregar </button>
+}
             </div>
 
 }

@@ -7,9 +7,13 @@ import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
+import CartProvider, {CartContext} from './components/CartContext'
 
 function App() {
   return (
+    <CartProvider> 
+
+
     <Router>
       <div className="App">
         <NavBar> </NavBar>
@@ -27,6 +31,8 @@ function App() {
         </Switch>
       </div>
     </Router>
+
+    </CartProvider>
   );
 }
 
