@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from "react";
 import ItemList from "./ItemList";
-import libros from './Libros';
+
+import { getFirestore } from '../firebase' 
 
 const getItems = () => {
-  return new Promise((res, rej) => {
-    setTimeout(() => {
-      res(libros);
-    }, 2000);
-  });
+  const db= getFirestore();
+  const itemCollection= db.collection('items');
+  const res = itemCollection.get()
+  return res.then((querySnapshot) => {
+    if(querySnapshot.size === 0){
+      return [];
+    }
+    return querySnapshot.docs.map(doc => doc.data())
+
+  })
+
 };
 
 function ItemListContainer(props) {
