@@ -27,7 +27,7 @@ function ItemListContainer(props) {
   }, []);
 
   return (
-    <div style={{ fontFamily: "arial", fontStyle: "italic", fontSize: "20px" }}>
+    <div style={{ fontFamily: "Crimson Text", fontStyle: "italic", fontSize: "20px" }}>
       <h3>{props.title}</h3>
       <ItemList libros={items}> </ItemList>
     </div>

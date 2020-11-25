@@ -9,6 +9,7 @@ function ItemDetail ( {item} ) {
         <h4> {item.title} </h4>
         <p> {item.description} </p>
         <p> {item.price} </p>
+        <p> {item.stock} </p>
         <img src={item.img}/>
 
 
