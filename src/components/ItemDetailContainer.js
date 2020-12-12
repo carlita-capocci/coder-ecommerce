@@ -1,15 +1,27 @@
 import React,{useState, useEffect}  from 'react';
 import {useParams} from 'react-router-dom';
 import ItemDetail from './ItemDetail'
-import libros from "./Libros";
+import { getFirestore } from '../firebase' 
+
 
 const getItemDetail = (id) => {
-    return new Promise((res, rej) => {
-      setTimeout(() => {
-        res(libros[id]);
-      }, 2000);
-    });
-  };
+  const db= getFirestore();
+  const itemCollection= db.collection('items');
+  const res = itemCollection.doc(id).get()
+  return res.then((doc) => {
+    
+    const docData = doc.data()
+    if(docData){
+
+      docData.id = doc.id
+    return docData
+    }
+    
+  })
+};
+
+
+
 
 function ItemDetailContainer(){
     const [item, setItems] = useState({});
@@ -21,9 +33,20 @@ function ItemDetailContainer(){
       });
     }, []);
 
+    if(!item){
+      return(
+
+        <h3>El producto no existe</h3>
+      )
+    }
+
     return (
-        <div style={{ fontFamily: "arial", fontStyle: "italic", fontSize: "20px" }}>
-          <ItemDetail item={item}/>
+        <div>
+          {item.id ?(
+            <ItemDetail item={item}/>
+
+          ): 'loading'}
+          
         </div>
       );
 

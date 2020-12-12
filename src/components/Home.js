@@ -1,15 +1,41 @@
-import React from 'react'
-import ItemCount from './ItemCount'
+import React from "react";
+import Carousel from "./Carousel";
 
-function Home(props){
-    return <div> 
-        <h1 style={{fontFamily:'arial', fontStyle: 'italic', fontSize:'30px' }}>{props.greeting} </h1>
-        <div>{props.children} </div>
-        <div> <ItemCount stock={4} initial={0} onAdd={console.log()}/> </div>
+import ItemListContainer from "./ItemListContainer";
 
-     </div>
 
-    
+
+function Home(props) {
+  return (
+    <div style={{backgroundColor:'#00aaff', paddingBottom:'100px'}}>
+      <h1
+        style={{
+          fontFamily: 'Source Serif Pro, serif',
+          fontStyle: "italic",
+          fontSize: "50px",
+          paddingTop:'20px',
+          color: 'white'
+         
+          
+        }}
+      >
+        {props.greeting}{" "}
+      </h1>
+      <div>{props.children} </div>
+
+      <ItemListContainer title="" categoryId={8}>
+        {(items) => (
+            <Carousel
+              items={items}
+            />
+        )}
+      </ItemListContainer>
+
+      
+    </div>
+  );
 }
 
-export default Home
+
+
+export default Home;

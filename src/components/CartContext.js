@@ -5,21 +5,23 @@ export const useCartContext = () => useContext(CartContext);
 
 export default function CartProvider({children, defaultCart=[]}){
     const [cart, setCart] = useState(defaultCart);
-    function add(item){
-        const itemFound= cart.find((it)=>it.id === item.id) 
+    function add(itemWrapper){
+        const itemFound= cart.find((iw)=>iw.item.id === itemWrapper.item.id) 
         if(!itemFound){
-            setCart([...cart,item])
+            setCart([...cart, itemWrapper])
         }
     
     };
 
 
     function remove(itemId){
-    
-        console.log('quitas un item', itemId)
-        setCart (cart.filter(item => item.id !== itemId ))
+        setCart (cart.filter(iw => iw.item.id !== itemId ))
     };
-    return <CartContext.Provider value = {{cart, add, remove}}>
+
+    function empty(itemId){
+        setCart ([]);
+    };
+    return <CartContext.Provider value = {{cart, add, remove, empty}}>
         {children}
     </CartContext.Provider>
 };

@@ -4,19 +4,17 @@ import {Link} from "react-router-dom";
 function Item({ id, title, description, price, img, stock }) {
   return (
     
-      <div style={{margin:'10px'}}> 
+      <div style={{margin:'70px', width:'200px', backgroundColor:''}}> 
         
-        <div style={{border:'1px solid black', width:'400px', padding:'5px'}}>
+          <h4 style={{height:'55px'}}> <Link style={{color:'white'}} to={`/detail/${id}`}>{title}</Link> </h4>
 
-          <h4> <Link to={`/detail/${id}`}>{title}</Link> </h4>
-          <p style={{fontSize:'15px'}}> {'$' + price} </p> 
-          <p style={{fontSize:'15px'}}> {description} </p>
-          
-          <img style={{border:'1px solid black', width:'200px' }} src = {`/imagenes/${img}`}  />
+
+<div style={{width:'200px', height:'300px', backgroundImage:`url('/imagenes/${img}')`, backgroundSize:'contain'}}>
+
+</div>  
 
         </div>
 
-      </div>
     
   );
 }

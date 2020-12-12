@@ -3,33 +3,42 @@ import ItemList from "./ItemList";
 
 import { getFirestore } from '../firebase' 
 
-const getItems = () => {
+const getItems = (categoryId) => {
   const db= getFirestore();
   const itemCollection= db.collection('items');
-  const res = itemCollection.get()
+  let res;
+  if (categoryId){
+    res = itemCollection.where('categoryId', '==', categoryId).get()
+  } else{
+    res = itemCollection.get()
+  }
   return res.then((querySnapshot) => {
     if(querySnapshot.size === 0){
       return [];
     }
-    return querySnapshot.docs.map(doc => doc.data())
+    return querySnapshot.docs.map(doc => {
+      const docData= doc.data()
+      docData.id= doc.id
 
+      return docData;
   })
-
+  })
 };
 
-function ItemListContainer(props) {
+function ItemListContainer({title, categoryId, children}) {
   const [items, setItems] = useState([]);
   useEffect(() => {
-    let prom = getItems();
+    let prom = getItems(categoryId);
     prom.then((resItems) => {
       setItems(resItems);
     });
-  }, []);
+  }, [categoryId]);
 
   return (
-    <div style={{ fontFamily: "Crimson Text", fontStyle: "italic", fontSize: "20px" }}>
-      <h3>{props.title}</h3>
-      <ItemList libros={items}> </ItemList>
+    <div style={{ fontFamily: "Crimson Text", fontStyle: "italic", fontSize: "20px"}}>
+      <h3 style={{fontSize:'50px'}}>{title}</h3>
+      {/* <ItemList libros={items}> </ItemList> */}
+      {children(items)}
     </div>
   );
 }

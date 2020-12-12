@@ -10,7 +10,7 @@ return <div>
     setValor( valor - 1)
     onChange(valor - 1)
     }
-}} style= {{margin: "5px"}} > - </button> 
+}} style= {{margin: "10px"}} > - </button> 
 
 {valor}
 
@@ -20,11 +20,9 @@ return <div>
     setValor( valor + 1)
     onChange(valor + 1)
     }
-}} style= {{margin: "5px"}}> + </button>
+}} style= {{margin: "10px"}}> + </button>
 
 
-
-<div> <button onClick={onChange} style= {{width: "120px", height:"50px", margin: "5px" }}> Agregar </button> </div>
 
 
 

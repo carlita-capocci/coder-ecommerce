@@ -1,12 +1,16 @@
 import React from 'react'
-import { Divider, Icon } from 'react-materialize';
+import {Link} from "react-router-dom";
+import {useCartContext} from './CartContext';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
-function CartWidget(){
-    return <div style={{marginTop:'20px', display:'inline', marginRight:'10px'}}>
-        
-<Icon> shopping_cart </Icon>
+function CartWidget({ className}){
+    const carrito = useCartContext()
+   
+    return <Link to='/cart' className={className}>
+        <span style={{ color: 'black', backgroundColor: 'white'}}>{carrito.cart.length > 0  ? carrito.cart.reduce((acc, iw) => acc+ iw.cantidad, 0) :''}</span>
+<ShoppingCartIcon></ShoppingCartIcon>
 
-    </div> 
+    </Link> 
 };
 
 export default CartWidget
