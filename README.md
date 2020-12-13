@@ -1,68 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Trabajo final del Curso React JS de CoderHouse
 
-## Available Scripts
+## Proyecto E-Commerce Libreria
 
-In the project directory, you can run:
 
-### `yarn start`
+Realizado **Carla Capocci**
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `yarn test`
+## Descripción
+```
+Este proyecto fue creado con [Create React App].
+En el he utilizado Bootstrap 4 y Material UI para agilizar el desarrollo de los estilos y Firebase para almacenar la información que se utiliza en la app.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
 
-### `yarn build`
+### Instrucciones de instalación 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+git clone https://github.com/carlita-capocci/coder-ecommerce
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+npm start
 
-### `yarn eject`
+// Abrir navegador en http://localhost:3000/
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+### Navegacion
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+La **navegación** ocurre en todo momento utilizando el router de la librería **react-router-dom** 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Componentes
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+La navegacion del e-commerce la determina el componente **Navbar** que esta accesible durante toda la experiencia. Un menu desplegable llamado **Categorias** que al desplegarse contiene **productos**, **novedades** y **ultimos ingresos**, enrutados respectivamente a los links con los diferentes libros. Ademas contiene un carrito de compras.
 
-## Learn More
+**Home** Contiene el nav y un carousel con algunos productos.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**ItemList**  Contiene el listado de productos. **ItemList** 
+Al hacer click en un producto del listado permite ver su descripción
+(imagen, precio, selector de cantidad de productos, un boton para comprar y un boton para volver al home).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+**Cart** Contiene el listado de productos seleccionados, la cantidad por producto elegido, la suma del precio de las unidades y la suma total de todos los productos, un boton para confirmar la compra que nos lleva al componente **Form**.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+**Form** Es un formulario para confirmar la compra, nos pide nombre y apellido, telefono, email y repetir el email, tiene un boton para confirmar que esta deshabilitado hasta que el usuario llene todos los campos.
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

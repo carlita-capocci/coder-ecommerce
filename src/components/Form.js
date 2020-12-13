@@ -17,7 +17,7 @@ const Formulario = ({ onComprarClick }) => {
             <div style={{textAlign:'center', border:'1px solid black', marginRight:'auto', marginLeft:'auto', width:'500px', height:'300px', padding:'15px', marginBottom:'10px', marginTop:'10px', backgroundColor:'white'}}>
 
             <form className="column" onSubmit={(e)=>e.preventDefault()}>
-                <div style={{margin:'10px'}} className="col-md-3">
+                <div style={{margin:'10px', paddingLeft: '15px'}} >
                     <input style={{width:'400px'}} type="text" placeholder="Nombre *" className="form-control" onChange={(e) => {
                         setNombre(e.target.value)
                     }} 
@@ -26,25 +26,25 @@ const Formulario = ({ onComprarClick }) => {
                 </div>
 
 
-                <div style={{margin:'10px'}} className="col-md-3">
+                <div style={{margin:'10px', paddingLeft: '15px'}}>
                     <input style={{width:'400px'}} type="text" placeholder="Apellido *" 
                     value={apellido}
                     className="form-control" onChange={(e) => setApellido(e.target.value)} name="apellido" ></input>
                 </div>
                 
-                <div style={{margin:'10px'}} className="col-md-3">
+                <div style={{margin:'10px', paddingLeft: '15px'}} >
                     <input style={{width:'400px'}} type="text" placeholder="Telefono *" 
                     value={telefono}
                     className="form-control" onChange={(e) => setTelefono(e.target.value)} name="telefono" ></input>
                 </div>
 
-                <div style={{margin:'10px'}} className="col-md-3">
+                <div style={{margin:'10px', paddingLeft: '15px'}} >
                     <input style={{width:'400px'}} type="email" placeholder="Email *" 
                     value={email}
                     className="form-control" onChange={(e) => setEmail(e.target.value)}  name="email1" ></input>
                 </div> 
 
-                <div style={{margin:'10px'}} className="col-md-3">
+                <div style={{margin:'10px', paddingLeft: '15px'}}>
 
                     <input style={{width:'400px'}} type="email" placeholder="Repetir Email *" 
                     value={email2}
